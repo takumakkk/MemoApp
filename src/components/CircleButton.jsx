@@ -1,11 +1,11 @@
 import React from 'react';
 import { View, Text, StyleSheet } from 'react-native';
-import { string } from 'prop-types';
+import { string, shape } from 'prop-types';
 
 export default function CircleButton(props) {
-  const { children } = props;
+  const { children, style } = props;
   return (
-    <View style={styles.circleButton}>
+    <View style={[styles.circleButton, style]}>
       <Text style={styles.circleButtonLabel}>{children}</Text>
     </View>
   );
@@ -14,12 +14,13 @@ export default function CircleButton(props) {
 // childrennに渡すデータ型を文字列として定義＆利用を必須とする
 CircleButton.propTypes = {
   children: string.isRequired,
+  style: shape(),
 };
 
-// 必須としない場合は空文字列を渡してESLintの警告を回避
-// CircleButton.defaultProps = {
-// children: '',
-// };
+// 必須としない場合は空文字列/nullを渡してESLintの警告を回避
+CircleButton.defaultProps = {
+  style: null,
+};
 
 const styles = StyleSheet.create({
   circleButton: {

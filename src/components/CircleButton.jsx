@@ -1,20 +1,22 @@
 import React from 'react';
-import { View, Text, StyleSheet } from 'react-native';
+import { View, StyleSheet } from 'react-native';
 import { string, shape } from 'prop-types';
+import { Feather } from '@expo/vector-icons';
 
 export default function CircleButton(props) {
-  const { children, style } = props;
+  const { style, name } = props;
   return (
     <View style={[styles.circleButton, style]}>
-      <Text style={styles.circleButtonLabel}>{children}</Text>
+      <Feather name={name} size={24} color="white" />
     </View>
   );
 }
 
 // childrennに渡すデータ型を文字列として定義＆利用を必須とする
 CircleButton.propTypes = {
-  children: string.isRequired,
+  // children: string.isRequired,
   style: shape(),
+  name: string.isRequired,
 };
 
 // 必須としない場合は空文字列/nullを渡してESLintの警告を回避

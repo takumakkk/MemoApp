@@ -1,0 +1,66 @@
+import React from 'react';
+import {
+  View, Text, TextInput, StyleSheet,
+} from 'react-native';
+
+import AppBar from '../components/AppBar';
+import Button from '../components/Button';
+
+export default function LogInScreen() {
+  return (
+    <View style={styles.container}>
+      <AppBar />
+      <View style={styles.inner}>
+        <Text style={styles.title}>Log In</Text>
+        <TextInput style={styles.input} value="Email address" />
+        <TextInput style={styles.input} value="Password" />
+        <Button label="Submit" />
+        <View style={styles.footer}>
+          <Text style={styles.footerText}>Not registerred?</Text>
+          <Text style={styles.footerLink}>Sign up here!</Text>
+        </View>
+      </View>
+    </View>
+  );
+}
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor: '#F0F4F8',
+  },
+  inner: {
+    paddingHorizontal: 27,
+    paddingVertical: 24,
+  },
+  title: {
+    fontSize: 24,
+    lineHeight: 32,
+    fontWeight: 'bold',
+    marginBottom: 24,
+  },
+  input: {
+    fontSize: 16,
+    lineHeight: 32,
+    height: 48,
+    borderColor: '#DDDDDD',
+    borderWidth: 1,
+    backgroundColor: '#ffffff',
+    paddingHorizontal: 8,
+    marginBottom: 16,
+  },
+  footerText: {
+    fontSize: 14,
+    lineHeight: 24,
+    marginRight: 8,
+  },
+  footerLink: {
+    fontSize: 14,
+    lineHeight: 24,
+    color: '#467FD3',
+  },
+  footer: {
+    // reactnativeは基本flexboxが適用されているので指定の必要はないが、デフォルトが縦方向のため、横方向に要素を並べたい時にflexDirectionを利用する。
+    flexDirection: 'row',
+  }
+});

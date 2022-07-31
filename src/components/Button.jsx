@@ -8,7 +8,7 @@ export default function Button(props) {
     <TouchableOpacity style={[styles.buttonContainer, style]} onPress={onPress}>
       <Text style={styles.buttonLable}>{label}</Text>
     </TouchableOpacity>
-  )
+  );
 }
 
 Button.propTypes = {

@@ -14,16 +14,13 @@ export default function SignUpScreen(props) {
 
   function handlePress() {
     firebase.auth().createUserWithEmailAndPassword(email, password)
-      .then((userCredential) => {
-        const { user } = userCredential;
-        console.log(user.uid);
+      .then(() => {
         navigation.reset({
           index: 0,
           routes: [{ name: 'MemoList' }],
         });
       })
       .catch((error) => {
-        console.log(error.code, error.message);
         const errorMsg = translateErrors(error.code);
         Alert.alert(errorMsg.title, errorMsg.description);
       });
@@ -111,5 +108,5 @@ const styles = StyleSheet.create({
   footer: {
     // reactnativeは基本flexboxが適用されているので指定の必要はないが、デフォルトが縦方向のため、横方向に要素を並べたい時にflexDirectionを利用する。
     flexDirection: 'row',
-  }
+  },
 });

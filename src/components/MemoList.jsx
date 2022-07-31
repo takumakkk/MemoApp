@@ -1,11 +1,13 @@
 // import { Feather } from '@expo/vector-icons';
 import React from 'react';
 import {
-  View, Text, StyleSheet, TouchableOpacity, Alert, FlatList
+  View, Text, StyleSheet, TouchableOpacity,
+  Alert, FlatList,
 } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 import {
-  shape, string, instanceOf, arrayOf
+  shape, string,
+  instanceOf, arrayOf,
 } from 'prop-types';
 import firebase from 'firebase';
 

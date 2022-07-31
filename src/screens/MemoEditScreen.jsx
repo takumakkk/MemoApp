@@ -51,7 +51,6 @@ export default function MemoEditScreen(props) {
   );
 }
 
-
 MemoEditScreen.propTypes = {
   route: shape({
     params: shape({ id: string, bodyText: string }),

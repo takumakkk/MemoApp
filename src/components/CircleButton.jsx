@@ -55,4 +55,4 @@ const styles = StyleSheet.create({
     lineHeight: 40,
     top: 4,
   },
-})
+});

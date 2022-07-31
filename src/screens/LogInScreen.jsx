@@ -14,7 +14,7 @@ export default function LogInScreen(props) {
   const [password, setPassword] = useState('');
   const [isLoading, setLoading] = useState(true);
 
-  useEffect(() =>{
+  useEffect(() => {
     const unsubscribe = firebase.auth().onAuthStateChanged((user) => {
       if (user) {
         navigation.reset({
@@ -31,9 +31,7 @@ export default function LogInScreen(props) {
   function handlePress() {
     setLoading(true);
     firebase.auth().signInWithEmailAndPassword(email, password)
-      .then((userCredential) => {
-        const { user } = userCredential;
-        console.log(user.uid);
+      .then(() => {
         navigation.reset({
           index: 0,
           routes: [{ name: 'MemoList' }],
@@ -81,7 +79,7 @@ export default function LogInScreen(props) {
             onPress={() => {
               navigation.reset({
                 inedex: 0,
-                routes: [{ name: 'SignUp' }]
+                routes: [{ name: 'SignUp' }],
               });
             }}
           >
@@ -131,5 +129,5 @@ const styles = StyleSheet.create({
   footer: {
     // reactnativeは基本flexboxが適用されているので指定の必要はないが、デフォルトが縦方向のため、横方向に要素を並べたい時にflexDirectionを利用する。
     flexDirection: 'row',
-  }
+  },
 });

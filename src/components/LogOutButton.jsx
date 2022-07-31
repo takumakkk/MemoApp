@@ -1,5 +1,8 @@
 import React from 'react';
-import { TouchableOpacity, Text, StyleSheet, Alert } from 'react-native';
+import {
+  TouchableOpacity,
+  Text, StyleSheet, Alert,
+} from 'react-native';
 import firebase from 'firebase';
 import { useNavigation } from '@react-navigation/native';
 
@@ -34,4 +37,4 @@ const styles = StyleSheet.create({
     fontSize: 14,
     color: 'rgba(255, 255, 255, 0.7)',
   },
-})
+});

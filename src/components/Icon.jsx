@@ -8,12 +8,12 @@ import selection from '../../assets/fonts/selection.json';
 
 export default function Icon(props) {
   const [fontLoaded] = useFonts({ icomoon });
-  const {name, size, color} = props;
+  const { name, size, color } = props;
   const CustomIcon = createIconSetFromIcoMoon(selection);
-  if(!fontLoaded) {
+  if (!fontLoaded) {
     return null;
   }
-  return < CustomIcon name={name} size={size} color={color} style={{ lineHeight: size - 1 }} />;
+  return <CustomIcon name={name} size={size} color={color} style={{ lineHeight: size - 1 }} />;
 }
 
 Icon.prototype = {

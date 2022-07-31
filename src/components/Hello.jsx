@@ -1,6 +1,6 @@
 import React from 'react';
-import { View, Text, StyleSheet } from 'react-native' ;
-import { string, bool, shape} from 'prop-types';
+import { View, Text, StyleSheet } from 'react-native';
+import { string, bool, shape } from 'prop-types';
 
 function Hello(props) {
   const { children, bang, style } = props;
@@ -19,7 +19,7 @@ Hello.propTypes = {
   style: shape(),
 };
 
-Hello.defaltProps = {
+Hello.defaultProps = {
   bang: false,
   style: null,
 };
